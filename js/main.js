@@ -25,14 +25,9 @@ const listaDipendenti = [];
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#property_definitions
 // Un metodo più veloce per creare oggetti da delle variabili è stato usato qui
-function creaObjectPerDipendente(nome, ruolo, path_foto) {
-    return {
-        nome,
-        ruolo,
-        path_foto
-    };
-}
 
+/* ------------------- Aggiunta dei dipendenti alla lista ------------------- */
+/* -------------------------------------------------------------------------- */
 listaDipendenti.push(creaObjectPerDipendente(
     "Wayne Barnett",
     "Founder & CEO",
@@ -68,3 +63,24 @@ listaDipendenti.push(creaObjectPerDipendente(
     "Graphic Designer",
     "img/barbara-ramos-graphic-designer.jpg"
 ))
+/* -------------------------------------------------------------------------- */
+
+for (const dipendente of listaDipendenti) {
+    console.log(`----------------------
+${dipendente.nome}
+${dipendente.ruolo}
+${dipendente.path_foto}
+----------------------`);
+}
+
+
+
+/* -------------------------------- Funzioni -------------------------------- */
+/* -------------------------------------------------------------------------- */
+function creaObjectPerDipendente(nome, ruolo, path_foto) {
+    return {
+        nome,
+        ruolo,
+        path_foto
+    };
+}
