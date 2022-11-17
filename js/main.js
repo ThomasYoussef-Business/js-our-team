@@ -91,11 +91,17 @@ function creaObjectPerDipendente(nome, ruolo, path_foto) {
 }
 
 function creaSchedaDipendente(dipendente) {
-    return `<div class="col-12 col-md-4">
-    <ul class="list-group">
-        <li class="list-group-item">${dipendente.nome}</li>
-        <li class="list-group-item">${dipendente.ruolo}</li>
-        <li class="list-group-item">${dipendente.path_foto}</li>
-    </ul>
-</div>`;
+    return `
+<div class="col-12 col-md-4">
+    <div class="card border-info text-center">
+        <img src="${dipendente.path_foto}" alt="Foto di un dipendente" class="card-img-top">
+        <div class="card-header p-2">
+            <p class="card-title fs-4 mb-0">${dipendente.nome}</p>
+        </div>
+        <div class="card-body p-2">
+            <p class="card-text fs-6 lead">${dipendente.ruolo}</p>
+        </div>
+    </div>
+</div>
+`;
 }
