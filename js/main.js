@@ -16,12 +16,15 @@
  * cioè nome, ruolo, e la stringa della foto.
  * 
  * -Devo mostrare queste informazioni nel DOM come stringhe.
+ * 
  * BONUS 1 e 2:
  * -Trasformare la foto da stringa ad immagine
  * - Organizzare ogni membro nella sua unica scheda.
  */
 
+/* ----------------------- Inizializzazione variabili ----------------------- */
 const listaDipendenti = [];
+const rigaDipendenti = document.getElementById("riga-dipendenti");
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#property_definitions
 // Un metodo più veloce per creare oggetti da delle variabili è stato usato qui
@@ -71,6 +74,8 @@ ${dipendente.nome}
 ${dipendente.ruolo}
 ${dipendente.path_foto}
 ----------------------`);
+
+    rigaDipendenti.innerHTML += creaSchedaDipendente(dipendente);
 }
 
 
@@ -83,4 +88,14 @@ function creaObjectPerDipendente(nome, ruolo, path_foto) {
         ruolo,
         path_foto
     };
+}
+
+function creaSchedaDipendente(dipendente) {
+    return `<div class="col-12 col-md-4">
+    <ul class="list-group">
+        <li class="list-group-item">${dipendente.nome}</li>
+        <li class="list-group-item">${dipendente.ruolo}</li>
+        <li class="list-group-item">${dipendente.path_foto}</li>
+    </ul>
+</div>`;
 }
